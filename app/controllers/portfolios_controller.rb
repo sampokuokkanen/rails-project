@@ -25,7 +25,7 @@ class PortfoliosController < ApplicationController
     end
   end
   def edit
-    @portfolio_item = Portfolio.find(params[:id])
+    @portfolio_item = Portfolio.friendly.find(params[:id])
   end
 
   # PATCH/PUT /blogs/1
