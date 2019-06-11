@@ -18,8 +18,6 @@
       <p class="alert"><%= alert %></p>
 
       <%= yield %>
-      <% if session[:source] %>
-      Thanks for visiting from <%= session[:source] %>
-      <% end %>
+      <%= source_helper %>    
   </body>
 </html>
