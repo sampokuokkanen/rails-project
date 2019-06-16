@@ -11,9 +11,10 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body class="text-center">
+        <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
 
-    <%= render 'shared/nav', location: "top" %>
+    <%= render 'shared/application_nav' %>
     <%= login_helper %>
 
       <p class="notice"><%= notice %></p>
@@ -22,5 +23,6 @@
       <%= yield %>
       <%= source_helper %>    
     <%= @copyright %>
+        </div>
     </body>
 </html>
