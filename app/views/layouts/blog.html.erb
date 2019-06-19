@@ -1,24 +1,56 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title><%= @page_title %></title>
+    
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta name="keywords" content"<%= @seo_keywords %>">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag    'blogs', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <div class="cover-container d-flex h-100 p-3 flex-column">
+    <%= render 'shared/application_nav' %>
 
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-      <%= login_helper %>
+  <div class="container">
+      <main role="main" class="container">
+          <div class="row">
+            <div class="col-md-8 blog-main">
 
-      <%= yield %>
-    
-      <%= render 'shared/nav', location: "bottom" %>
-    
+    <%= render @blogs %>
+
+        <%== pagy_bootstrap_nav(@pagy) %>
+
+
       <%= source_helper %>
+
+            </div>
+            <aside class="text-dark col-md-4 blog-sidebar my-4">
+                <div class="p-4 mb-3 bg-light rounded">
+                  <h4 class="font-italic">About</h4>
+                  <p class="mb-0 mt-3">Hello, dear reader! My name is <em>Sampo Kuokkanen</em> and I work as a PHP developer in Kyoto, Japan. Though I happen to like Rails and Javascript more than PHP... by the way, this site you are perusing right now was developed using Ruby on Rails.</p>
+                </div>
+      
+                <div class="p-3">
+                  <h4 class="font-italic text-white">Elsewhere</h4>
+                  <ol class="list-unstyled social-links">
+                    <li><a href="#"><%= fa_icon "github" %>GitHub</a></li>
+                    <li><a href="#"><%= fa_icon "twitter" %>Twitter</a></li>
+                    <li><a href="#"><%= fa_icon "facebook" %>Facebook</a></li>
+                  </ol>
+                </div>
+              </aside><!-- /.blog-sidebar -->
+          </div>
+      </main>
+      
+    </div>
+    <div class="text-center">
+    <%= render 'shared/application_footer' %>
+  </div>
   </body>
 </html>

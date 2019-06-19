@@ -51,7 +51,8 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-
+  gem 'guard-livereload', '~> 2.5', require: false
+  gem "rack-livereload"
   # gem 'better_errors'
 end
 
@@ -62,3 +63,5 @@ gem 'petergate', '~> 2.0', '>= 2.0.1'
 gem 'friendly_id', '~> 5.2.4'
 gem 'devise', '~> 4.6', '>= 4.6.2'
 gem 'sampo_view_tool', git: "https://github.com/sampokuokkanen/copyright-rubygem"
+gem "font-awesome-rails"
+gem 'pagy'
